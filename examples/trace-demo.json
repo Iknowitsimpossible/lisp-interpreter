@@ -1,0 +1,139 @@
+[
+  {
+    "event": "evaluate",
+    "step": 1,
+    "line": 1,
+    "column": 1,
+    "scope": 0,
+    "stack": []
+  },
+  {
+    "event": "evaluate",
+    "step": 2,
+    "line": 3,
+    "column": 1,
+    "scope": 0,
+    "stack": []
+  },
+  {
+    "event": "evaluate",
+    "step": 3,
+    "line": 3,
+    "column": 2,
+    "scope": 0,
+    "stack": []
+  },
+  {
+    "event": "evaluate",
+    "step": 4,
+    "line": 3,
+    "column": 9,
+    "scope": 0,
+    "stack": []
+  },
+  {
+    "event": "evaluate",
+    "step": 5,
+    "line": 3,
+    "column": 10,
+    "scope": 0,
+    "stack": []
+  },
+  {
+    "event": "evaluate",
+    "step": 6,
+    "line": 3,
+    "column": 20,
+    "scope": 0,
+    "stack": []
+  },
+  {
+    "event": "call",
+    "step": 6,
+    "line": 3,
+    "column": 9,
+    "scope": 1,
+    "stack": [
+      "increment"
+    ],
+    "function": "increment",
+    "bindings": {
+      "x": "4"
+    }
+  },
+  {
+    "event": "evaluate",
+    "step": 7,
+    "line": 2,
+    "column": 5,
+    "scope": 1,
+    "stack": [
+      "increment"
+    ]
+  },
+  {
+    "event": "evaluate",
+    "step": 8,
+    "line": 2,
+    "column": 12,
+    "scope": 1,
+    "stack": [
+      "increment"
+    ]
+  },
+  {
+    "event": "evaluate",
+    "step": 9,
+    "line": 2,
+    "column": 13,
+    "scope": 1,
+    "stack": [
+      "increment"
+    ]
+  },
+  {
+    "event": "evaluate",
+    "step": 10,
+    "line": 2,
+    "column": 15,
+    "scope": 1,
+    "stack": [
+      "increment"
+    ]
+  },
+  {
+    "event": "evaluate",
+    "step": 11,
+    "line": 2,
+    "column": 17,
+    "scope": 1,
+    "stack": [
+      "increment"
+    ]
+  },
+  {
+    "event": "set",
+    "step": 11,
+    "line": 2,
+    "column": 5,
+    "scope": 1,
+    "stack": [
+      "increment"
+    ],
+    "name": "x",
+    "before": "4",
+    "after": "5"
+  },
+  {
+    "event": "return",
+    "step": 11,
+    "line": 3,
+    "column": 9,
+    "scope": 1,
+    "stack": [
+      "increment"
+    ],
+    "function": "increment",
+    "value": "5"
+  }
+]
