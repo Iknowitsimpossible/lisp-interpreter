@@ -1,0 +1,16 @@
+[package]
+name = "lisp-interpreter"
+version = "0.1.0"
+edition = "2021"
+description = "A small Lisp bytecode interpreter with lexical closures and execution traces"
+publish = false
+
+[[bin]]
+name = "lisp-rs"
+path = "src/main.rs"
+
+[dependencies]
+serde_json = "1"
+
+[profile.release]
+lto = "thin"
