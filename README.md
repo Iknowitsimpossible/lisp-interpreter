@@ -1,56 +1,55 @@
 # Lisp Interpreter
 
-A small Lisp interpreter written in Python, with recursion, lexical closures,
-and execution tracing. No dependencies; requires Python 3.9+.
+A small Lisp with two implementations: a **Rust bytecode VM** and a **Python
+reference interpreter**. Both support recursion, lexical closures, and execution traces.
 
 ## Quick start
 
 ```sh
-git clone https://github.com/Iknowitsimpossible/lisp-interpreter.git
+git clone --branch rust-version https://github.com/Iknowitsimpossible/lisp-interpreter.git
 cd lisp-interpreter
-python3 lisp.py
 ```
 
-Type expressions at the prompt, or enter `:quit` to exit:
+With [Rust](https://rustup.rs/) installed, run the Fibonacci example or open the REPL:
 
-```lisp
-(+ 2 (* 3 4))  ; 14
-
-(function square (x) (* x x))
-(square 7)     ; 49
+```sh
+cargo run --release --manifest-path rust/Cargo.toml -- examples/fibonacci.lisp
+cargo run --release --manifest-path rust/Cargo.toml
 ```
 
-Run an example or a single expression:
+Or use Python 3.9+ without dependencies:
 
 ```sh
 python3 lisp.py examples/fibonacci.lisp
-python3 lisp.py -e '(+ 1 2)'
+python3 lisp.py
+```
+
+Enter `:quit` to leave either REPL.
+
+## Example
+
+```lisp
+(function square (x) (* x x))
+(output (square 7))  ; 49
 ```
 
 ## Features
 
-- Variables, conditionals, loops, and first-class functions.
-- Recursion and lexical closures.
-- Numbers, strings, lists, and comments.
-- Errors with line and column numbers.
-- Token and parse-tree inspection; JSON traces of calls and variable changes.
-
-The implementation follows **tokenize → parse → evaluate**.
-
-## Inspect execution
-
-```sh
-python3 lisp.py -e '(+ 1 (* 2 3))' --tokens
-python3 lisp.py -e '(+ 1 (* 2 3))' --ast
-python3 lisp.py examples/trace-demo.lisp --trace trace.json
-```
+- Variables, conditionals, loops, lists, and first-class functions.
+- Recursive functions and lexical closures.
+- Source-positioned errors, token/parse-tree inspection, and JSON execution traces.
+- Rust: bytecode compilation, an explicit call stack, and environment garbage collection.
 
 ## Tests
 
 ```sh
+cargo test --manifest-path rust/Cargo.toml
 python3 -m unittest -v
+cargo build --release --manifest-path rust/Cargo.toml
+python3 rust/tests/compare_python.py
 ```
 
-A small educational dialect, rather than full Scheme or Common Lisp.
-See the [language reference](LANGUAGE.md) for syntax and execution limits,
-[examples](examples/) for programs, and [research notes](RESEARCH.md) for related projects.
+See the [Rust guide](rust/README.md) for tracing, embedding, and compatibility differences,
+the [language reference](LANGUAGE.md) for the shared syntax,
+and [examples](examples/) for programs. These are educational dialects, not full
+Scheme or Common Lisp. [Research notes](RESEARCH.md) cover related projects.
