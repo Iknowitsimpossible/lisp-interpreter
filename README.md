@@ -1,7 +1,7 @@
 # Lisp Interpreter
 
 A small Lisp with two implementations: a **Rust bytecode VM** and a **Python
-reference interpreter**. Both support recursion, lexical closures, and execution traces.
+reference interpreter**. Both support recursion, lexical closures, and execution traces. An extension of school project
 
 ## Quick start
 
